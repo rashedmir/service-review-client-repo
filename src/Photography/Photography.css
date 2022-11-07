@@ -1,0 +1,4 @@
+.bg-img{
+    background-image: linear-gradient(to right, rgb(184, 86, 214) -20%, rgba(235, 19, 255, 0) 100%), url(../assests/photography_banner.jpg);
+
+}

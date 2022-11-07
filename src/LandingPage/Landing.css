@@ -1,0 +1,15 @@
+.bg-image{
+    background-image: linear-gradient(to right, #7e3939 -20%, rgba(167, 164, 164, 0) 50%), url(../assests/landing_image.jpg);
+}
+
+.font{
+    font-family: 'Caveat', cursive;
+}
+
+.font-2{
+    font-family: 'Prompt', sans-serif;
+}
+
+.font-3{
+    font-family: 'Barlow Condensed', sans-serif;
+}
