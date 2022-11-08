@@ -15,7 +15,8 @@ export const routes = createBrowserRouter([
         children:[
             {
                 path:'/main/photography',
-                element: <Photography></Photography>
+                element: <Photography></Photography>,
+                loader: () => fetch('http://localhost:5000/category')
             }
         ]
     },
