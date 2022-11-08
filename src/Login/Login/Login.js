@@ -3,8 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import Footer from '../../Footer/Footer';
+import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
+    useTitle('Login');
 
     const [error, setError] = useState('');
     const { signIn, providerLogin } = useContext(AuthContext);
@@ -12,7 +14,7 @@ const Login = () => {
     const location = useLocation();
     const googleProvider = new GoogleAuthProvider()
 
-    const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/main/photography';
 
     const handleSubmit = event => {
         event.preventDefault();

@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
+
+
     return (
 
         <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded">
@@ -29,12 +42,30 @@ const Navbar = () => {
                         <li>
                             <a href="/" class="font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0 ">Contact</a>
                         </li>
-                        <li>
-                            <a href="/login" class="font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0 ">Login</a>
-                        </li>
-                        <li>
-                            <a href="/register" class="font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0 ">Register</a>
-                        </li>
+                        <div className="flex items-center">
+                            {
+                                user?.uid ?
+                                    <>
+                                        <span className='text-xl font-bold text-gray-500'>{user?.displayName}</span>
+                                        <button className="mr-5 ml-5 text-lg font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={handleLogOut}>Log out</button>
+                                    </>
+                                    :
+                                    <>
+                                        <Link to="/login" className="mr-5 text-lg font-medium text-blue-600 dark:text-blue-500 hover:underline">Login</Link>
+                                        <Link to="/register" className="mr-5 text-lg font-medium text-blue-600 dark:text-blue-500 hover:underline">Register</Link>
+                                    </>
+                            }
+                            <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                                <span className="sr-only">Open user menu</span>
+                                {user?.photoURL ?
+                                    <Tippy content={user?.displayName}><img className="w-12 h-12 rounded-full" src={user?.photoURL} alt="img" /></Tippy>
+                                    : <Tippy content="No user logged in"><img className="w-14 h-14 rounded-full" src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" alt="img" /></Tippy>
+                                }
+                            </button>
+                            <div>
+
+                            </div>
+                        </div>
 
                     </ul>
                 </div>
