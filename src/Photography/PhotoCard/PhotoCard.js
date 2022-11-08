@@ -20,18 +20,20 @@ const PhotoCard = ({ category }) => {
                         </div>
                         <div className='w-1/2'>
                             <h1 className="text-5xl font-bold">{title}</h1>
-                            <p className="py-6 justify-evenly">{description.slice(0, 100)}...</p>
+                            <p className="py-6 text-xl justify-evenly">{description.slice(0, 100)}...</p>
                             <Link to={`/main/category/${_id}`}><button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 
-                        focus:ring-gray-400 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2">Explore</button></Link>
+                        focus:ring-gray-400 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 
+                        transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-100">Explore</button></Link>
                         </div>
                     </div>
                 </div>) : (<div className="my-16">
                     <div className="flex flex-row mx-36 items-center">
                         <div className='w-1/2'>
                             <h1 className="text-5xl font-bold">{title}</h1>
-                            <p className="py-6 justify-evenly">{description.slice(0, 100)}...</p>
+                            <p className="py-6 pr-8 text-xl justify-evenly">{description.slice(0, 100)}...</p>
                             <Link to={`/main/category/${_id}`}><button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 
-                        focus:ring-gray-400 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2">Explore</button></Link>
+                        focus:ring-gray-400 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 
+                        transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-100">Explore</button></Link>
                         </div>
                             <div className='w-1/2'>
                                 <PhotoProvider>

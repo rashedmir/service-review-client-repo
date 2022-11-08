@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 import PhotoCard from '../PhotoCard/PhotoCard';
 import './AllPhotoCategory.css'
 
 const AllPhotoCategory = () => {
+    useTitle('Category');
     const categories = useLoaderData()
     return (
         <div>

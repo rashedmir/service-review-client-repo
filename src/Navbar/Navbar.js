@@ -29,6 +29,13 @@ const Navbar = () => {
                         <li>
                             <a href="/" class="font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0 ">Contact</a>
                         </li>
+                        <li>
+                            <a href="/login" class="font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0 ">Login</a>
+                        </li>
+                        <li>
+                            <a href="/register" class="font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0 ">Register</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>

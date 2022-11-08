@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Landing.css';
 import 'animate.css'
+import useTitle from '../Hooks/useTitle';
 
 
 const Landing = () => {
+    useTitle('Home');
     return (
         <div className='bg-image h-screen pl-32 flex items-center'>
             <div>
