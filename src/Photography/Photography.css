@@ -2,3 +2,21 @@
     background-image: linear-gradient(to right, rgb(184, 86, 214) -20%, rgba(235, 19, 255, 0) 100%), url(../assests/photography_banner.jpg);
 
 }
+
+.strike {
+  --thickness: 10px;
+  --strike: 0;
+  
+  background: linear-gradient(-90deg, transparent, white) no-repeat 
+              right top/ calc(var(--strike) * 100%) var(--thickness), linear-gradient(90deg, transparent, white) no-repeat 
+              left bottom/ calc(var(--strike) * 100%) var(--thickness);
+
+  transition: background-size .5s ease;
+  font: 25px Arial;
+  padding: 0 .2em;
+}
+
+.strike:hover {
+  --strike: 1; /* "1" means "true" (show the strike line) */
+  background-position-x: -left;
+}

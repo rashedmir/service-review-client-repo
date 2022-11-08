@@ -8,7 +8,7 @@ const PhotoCard = ({ category }) => {
                 (service_id % 2 === 0) ? (<div className="my-16">
                     <div className="flex flex-row mx-36 items-center">
                         <div className='w-1/2'>
-                            <img src={img} alt='img' className="w-4/5 h-full rounded-lg shadow-2xl" />
+                            <img src={img} alt='img' className="w-4/5 h-full rounded-lg shadow-2xl hover:-rotate-6 transition-transform rotate-6" />
 
                         </div>
                         <div className='w-1/2'>
@@ -27,7 +27,7 @@ const PhotoCard = ({ category }) => {
                         focus:ring-gray-400 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2">Explore</button>
                         </div>
                             <div className='w-1/2'>
-                                <img src={img} alt='img' className="w-4/5 h-full rounded-lg shadow-2xl" />
+                                <img src={img} alt='img' className="w-4/5 h-full rounded-lg shadow-2xl hover:rotate-6 transition-transform -rotate-6" />
 
                             </div>
                     </div>

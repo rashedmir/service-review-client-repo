@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Landing from '../../LandingPage/Landing';
 import Main from '../../Main/Main';
+import AllPhotoCategory from '../../Photography/AllPhotoCategory/AllPhotoCategory';
 import Photography from '../../Photography/Photography';
 
 export const routes = createBrowserRouter([
@@ -16,6 +17,11 @@ export const routes = createBrowserRouter([
             {
                 path:'/main/photography',
                 element: <Photography></Photography>,
+                loader: () => fetch('http://localhost:5000/category')
+            },
+            {
+                path:'/main/allPhotoCategory',
+                element:<AllPhotoCategory></AllPhotoCategory>,
                 loader: () => fetch('http://localhost:5000/category')
             }
         ]
