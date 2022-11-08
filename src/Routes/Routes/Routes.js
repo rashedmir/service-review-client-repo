@@ -8,6 +8,7 @@ import AllPhotoCategory from '../../Photography/AllPhotoCategory/AllPhotoCategor
 import CategoryDetails from '../../Photography/CategoryDetails/CategoryDetails';
 import Photography from '../../Photography/Photography';
 import TermsAndConditions from '../../Others/TermsAndConditions/TermsAndConditions';
+import Reviews from '../../Reviews/Reviews';
 
 export const routes = createBrowserRouter([
     {
@@ -32,6 +33,11 @@ export const routes = createBrowserRouter([
                 path: '/main/category/:id',
                 element: <CategoryDetails></CategoryDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+            },
+            {
+                path: '/main/category/:id',
+                element: <Reviews></Reviews>,
+                loader: () => fetch(`http://localhost:5000/review`)
             }
             
         ]

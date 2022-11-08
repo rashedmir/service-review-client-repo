@@ -5,7 +5,7 @@ import PhotoCard from '../PhotoCard/PhotoCard';
 import './AllPhotoCategory.css'
 
 const AllPhotoCategory = () => {
-    useTitle('Category');
+    useTitle('Services');
     const categories = useLoaderData()
     return (
         <div>

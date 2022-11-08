@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
-// import logo from '../../../src/eduonlineLogo.svg'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { ToastContainer, toast, Flip, Slide, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from '../../Footer/Footer';
+import useTitle from '../../Hooks/useTitle';
 
 
 const Register = () => {
+    useTitle('Register');
 
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
@@ -35,12 +36,11 @@ const Register = () => {
         const photoURL = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(email, password);
+        
 
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                // console.log(user);
                 setError('');
                 form.reset();
 
@@ -81,7 +81,7 @@ const Register = () => {
                         </div>
                     </Link>
                 </div>
-                <div className='flex flex-col items-center md:w-1/3 bg-white rounded-lg mx-16 text-gray-800 p-5'>
+                <div className='flex flex-col items-center md:w-1/3 bg-white rounded-lg mx-16 text-gray-800 p-5 mb-16'>
                     <div>
                         <h1 className='font-bold text-3xl mb-2'>Register account</h1>
                     </div>
@@ -118,9 +118,8 @@ const Register = () => {
                             <input onClick={handleAccepted} id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                             <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 ">{<>Accept <Link className='text-blue-600' to="/terms">Terms & conditions</Link></>}</label>
                         </div>
-                        <button type="submit" disabled={!accepted} class="disabled:bg-gray-400 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none 
-                        focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600
-                         dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign up</button>
+                        <button type="submit" disabled={!accepted} class="disabled:bg-gray-400 text-white bg-blue-700 focus:ring-4 focus:outline-none 
+                        focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Sign up</button>
                         <ToastContainer
                             theme="dark"
                             position="top-center"

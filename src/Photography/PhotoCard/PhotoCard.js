@@ -13,7 +13,7 @@ const PhotoCard = ({ category }) => {
                         <div className='w-1/2'>
                             <PhotoProvider>
                                 <PhotoView src={img}>
-                                    <img src={img} alt='img' className="w-4/5 h-full rounded-lg shadow-2xl hover:-rotate-6 transition-transform rotate-6" />
+                                    <img src={img} alt='img' className="cursor-zoom-in w-4/5 h-full rounded-lg shadow-2xl hover:-rotate-6 transition-transform rotate-6" />
                                 </PhotoView>
                             </PhotoProvider>
 
@@ -38,7 +38,7 @@ const PhotoCard = ({ category }) => {
                             <div className='w-1/2'>
                                 <PhotoProvider>
                                     <PhotoView src={img}>
-                                        <img src={img} alt='img' className="w-4/5 h-full rounded-lg shadow-2xl hover:rotate-6 transition-transform -rotate-6" />
+                                        <img src={img} alt='img' className="cursor-zoom-in w-4/5 h-full rounded-lg shadow-2xl hover:rotate-6 transition-transform -rotate-6" />
                                     </PhotoView>
                                 </PhotoProvider>
                             </div>
