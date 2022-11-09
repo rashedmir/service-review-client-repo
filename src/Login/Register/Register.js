@@ -94,31 +94,31 @@ const Register = () => {
                         <hr className='border-2 w-60 ml-5'></hr>
                     </div>
                     <form onSubmit={handleSubmit} className='w-11/12 mt-8'>
-                        <div class="mb-6">
-                            <p class="block mb-2 text-sm font-medium text-gray-900">Full Name</p>
-                            <input name="name" type="text" id="f_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                        <div className="mb-6">
+                            <p className="block mb-2 text-sm font-medium text-gray-900">Full Name</p>
+                            <input name="name" type="text" id="f_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
                              focus:border-blue-500 block w-full p-2.5 " placeholder="Jhankar Mahbub" />
                         </div>
-                        <div class="mb-6">
-                            <p class="block mb-2 text-sm font-medium text-gray-900 ">Photo Link</p>
-                            <input name="photo" type="text" id="p_link" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                        <div className="mb-6">
+                            <p className="block mb-2 text-sm font-medium text-gray-900 ">Photo Link</p>
+                            <input name="photo" type="text" id="p_link" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
                              focus:border-blue-500 block w-full p-2.5 " placeholder="http://.....com/abcd.jpg .png" />
                         </div>
-                        <div class="mb-6">
-                            <p class="block mb-2 text-sm font-medium text-gray-900 ">Your email</p>
-                            <input name="email" type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                        <div className="mb-6">
+                            <p className="block mb-2 text-sm font-medium text-gray-900 ">Your email</p>
+                            <input name="email" type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
                              focus:border-blue-500 block w-full p-2.5 " placeholder="name@mrphotography.com" required />
                         </div>
-                        <div class="mb-6">
-                            <p class="block mb-2 text-sm font-medium text-gray-900 ">Your password</p>
-                            <input name="password" type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
+                        <div className="mb-6">
+                            <p className="block mb-2 text-sm font-medium text-gray-900 ">Your password</p>
+                            <input name="password" type="password" id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                             focus:border-blue-500 block w-full p-2.5 " placeholder='••••••••••••' required />
                         </div>
-                        <div class="flex items-center mb-4">
-                            <input onClick={handleAccepted} id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                            <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 ">{<>Accept <Link className='text-blue-600' to="/terms">Terms & conditions</Link></>}</label>
+                        <div className="flex items-center mb-4">
+                            <input onClick={handleAccepted} id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                            <label for="default-checkbox" className="ml-2 text-sm font-medium text-gray-900 ">{<>Accept <Link className='text-blue-600' to="/terms">Terms & conditions</Link></>}</label>
                         </div>
-                        <button type="submit" disabled={!accepted} class="disabled:bg-gray-400 text-white bg-blue-700 focus:ring-4 focus:outline-none 
+                        <button type="submit" disabled={!accepted} className="disabled:bg-gray-400 text-white bg-blue-700 focus:ring-4 focus:outline-none 
                         focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Sign up</button>
                         <ToastContainer
                             theme="dark"

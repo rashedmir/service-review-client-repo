@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-
+import useTitle from '../Hooks/useTitle';
+import './AddServices.css'
 const AddServices = () => {
+    useTitle("Add Service")
     const [category, setCategory] = useState({});
     const [dataLength, setdataLength] = useState({});
 
@@ -25,7 +27,7 @@ const AddServices = () => {
                 event.target.reset();
             })
     }
-    
+
     const handleInputBlur = event => {
         const service_id = (dataLength.length + 1).toString();
         const field = event.target.name;
@@ -39,30 +41,34 @@ const AddServices = () => {
     return (
 
         <form onSubmit={handleAddService}>
-            <div class="">
+            <div className="mx-56">
                 <div>
-                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Title</label>
-                    <input onBlur={handleInputBlur} type="text" name="title" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                    <label for="last_name" className="block mb-2 text-xl font-medium text-gray-900">Title</label>
+                    <input onBlur={handleInputBlur} type="text" name="title" id="last_name" className="field_input2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                     focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Title of the Service" required />
                 </div>
                 <div>
-                    <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Image URL</label>
-                    <input onBlur={handleInputBlur} type="text" name="img" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                    <label for="company" className="block mb-2 text-xl font-medium text-gray-900">Image URL</label>
+                    <input onBlur={handleInputBlur} type="text" name="img" id="company" className="field_input2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                     focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="http://.....com/abcd.jpg .png" required />
                 </div>
                 <div>
-                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Price in $</label>
-                    <input onBlur={handleInputBlur} type="text" name="price" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                    <label for="phone" className="block mb-2 text-xl font-medium text-gray-900">Price in $</label>
+                    <input onBlur={handleInputBlur} type="text" name="price" id="phone" className="field_input2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                     focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123.00" required />
                 </div>
                 <div>
-                    <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Description</label>
-                    <input onBlur={handleInputBlur} type="text" name="description" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-                    focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Write something about the service" required />
+                    <label for="website" className="block mb-2 text-xl font-medium text-gray-900">Description</label>
+                    <input onBlur={handleInputBlur} type="text" name="description" id="website" className="field_input1 text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                    focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Write something about the service" required/>
                 </div>
-
-                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </div>
+
+            <div className='text-center'>
+                <button type="submit" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-4 px-24 border border-gray-400 rounded shadow 
+                    transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-100 my-6">Submit</button>
+            </div>
+
         </form>
 
     );

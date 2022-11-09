@@ -10,6 +10,7 @@ import Photography from '../../Photography/Photography';
 import TermsAndConditions from '../../Others/TermsAndConditions/TermsAndConditions';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import AddServices from '../../AddServices/AddServices';
+import MyReviews from '../../MyReviews/MyReviews';
 
 export const routes = createBrowserRouter([
     {
@@ -41,8 +42,12 @@ export const routes = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
-                path: '/main/addServices',
-                element: <AddServices></AddServices>,
+                path: '/main/private/addServices',
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>,
+            },
+            {
+                path: '/main/private/myReview',
+                element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
             }
         ]
     },

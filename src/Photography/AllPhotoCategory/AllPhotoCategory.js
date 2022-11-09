@@ -17,7 +17,7 @@ const AllPhotoCategory = () => {
 
             <div>
                 {
-                    categories.map(category => (<PhotoCard key={category._id} category={category}></PhotoCard>))
+                    categories.slice().reverse().map(category => (<PhotoCard key={category._id} category={category}></PhotoCard>))
                 }
             </div>
         </div>
