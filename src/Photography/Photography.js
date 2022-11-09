@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import './Photography.css'
 import { Link, useLoaderData } from 'react-router-dom';
 import PhotoCard from './PhotoCard/PhotoCard';
-import AllPhotoCategory from './AllPhotoCategory/AllPhotoCategory';
 import useTitle from '../Hooks/useTitle';
 
 const Photography = () => {
     useTitle('Photography');
     const categories = useLoaderData()
-    // const [category, setCategory]=useState(categories)
     return (
         <div>
             <div className='bg-img py-32 w-screen text-center shadow-2xl'>
