@@ -9,6 +9,7 @@ import CategoryDetails from '../../Photography/CategoryDetails/CategoryDetails';
 import Photography from '../../Photography/Photography';
 import TermsAndConditions from '../../Others/TermsAndConditions/TermsAndConditions';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import AddServices from '../../AddServices/AddServices';
 
 export const routes = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ export const routes = createBrowserRouter([
                 path: '/main/private/:id',
                 element: <PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+            },
+            {
+                path: '/main/addServices',
+                element: <AddServices></AddServices>,
             }
         ]
     },
@@ -53,7 +58,6 @@ export const routes = createBrowserRouter([
         path: '/terms',
         element: <TermsAndConditions></TermsAndConditions>
     }
-    
 ])
 
 export default routes;

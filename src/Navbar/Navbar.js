@@ -33,7 +33,7 @@ const Navbar = () => {
                             <a href="/" class="font-3 text-xl block py-2 pr-4 pl-3 text-white rounded md:text-gray-700 md:p-0" aria-current="page">Home</a>
                         </li>
                         <li>
-                            <a href="/" class="font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0 ">About</a>
+                            <a href="/main/photography" class="font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0 ">Photography</a>
                         </li>
                         <li>
                             <a href="/main/allPhotoCategory" class="font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0 ">Services</a>
@@ -48,7 +48,7 @@ const Navbar = () => {
                                 <Link to="/">
                                     <button class="mr-5 ml-0 font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0">My Reviews</button>
                                 </Link>
-                                <Link to="/">
+                                <Link to="/main/addServices">
                                     <button class="mr-5 ml-0 font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0 ">Add Services</button>
                                 </Link>
                                 <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">

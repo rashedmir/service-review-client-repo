@@ -13,10 +13,8 @@ const Landing = () => {
                     <span className='mx-7'>Content Creator</span> |
                     <span className='mx-7'>Storyteller</span>
                 </p>
-                <div className='font-3 text-5xl mt-5 text-white animate__animated animate__slideInUp'>
+                <div className='font-3 ml-40 text-5xl mt-5 text-white animate__animated animate__slideInUp'>
                     <Link className='' to='/main/photography'>Photography</Link>
-                    <Link className='ml-10' to='/'>About</Link>
-                    <Link className='ml-10' to='/'>Contact</Link>
                     <Link className='ml-10' to='/'>Blog</Link>
                 </div>
             </div>
