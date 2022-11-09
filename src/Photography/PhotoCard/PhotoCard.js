@@ -6,7 +6,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 const PhotoCard = ({ category }) => {
     const {_id, service_id, img, title, description, price } = category;
     return (
-        <div>
+        <div className='font-3'>
             {
                 (service_id % 2 === 0) ? (<div className="my-16">
                     <div className="flex flex-row mx-36 items-center">

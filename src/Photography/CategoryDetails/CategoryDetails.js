@@ -19,7 +19,7 @@ const CategoryDetails = () => {
     },[])    
 
     return (
-        <div className='mx-28'>
+        <div className='mx-28 font-2'>
             <div className='flex justify-center'>
                 <PhotoProvider>
                     <PhotoView src={img}>
@@ -34,7 +34,7 @@ const CategoryDetails = () => {
             </div>
             <Reviews card_id={_id} cat_title={title}></Reviews>
             {
-                reviews.map(review => <ShowReview key={review._id} review={review} card_id={_id}></ShowReview>)
+                reviews.slice().reverse().map(review => <ShowReview key={review._id} review={review} card_id={_id}></ShowReview>)
             }
         </div>
     );

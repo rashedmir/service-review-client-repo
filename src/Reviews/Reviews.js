@@ -43,9 +43,7 @@ const Reviews = ({ card_id, cat_title }) => {
 
     return (
 
-        <div class="grid mb-8 rounded-lg shadow-sm md:mb-12">
-            <h2>Reviews</h2>
-
+        <div class="grid rounded-lg shadow-sm md:mb-12">
             <div className='my-14 text-center'>
 
                 {
@@ -61,10 +59,11 @@ const Reviews = ({ card_id, cat_title }) => {
                         </>
                         :
                         <>
-                            <button><Link className='bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow 
-                    transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-100' to={`/main/private/${card_id}`}>Login to Comment</Link></button>
+                            <button><Link className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow 
+                    transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-100" to={`/main/private/${card_id}`}>Login to Comment</Link></button>
                         </>
                 }
+                <h2 className='mt-5 text-3xl font-3 font-bold text-gray-400'>Reviews</h2>
             </div>
 
 
