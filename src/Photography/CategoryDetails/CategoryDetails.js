@@ -9,7 +9,7 @@ import ShowReview from '../../Reviews/ShowReview';
 const CategoryDetails = () => {
     useTitle('Details');
     const catDetails = useLoaderData()
-    const { _id, img, description, title } = catDetails
+    const { _id, img, description, title, price } = catDetails
     const [reviews, setReviews] = useState([]);
 
     useEffect(()=>{
@@ -30,9 +30,12 @@ const CategoryDetails = () => {
             <p className='text-sm text-gray-400 text-center'>Click on the image for fullscreen view</p>
             <div className='text-center'>
                 <h1 className='my-10 text-5xl text-gray-700 font-bold'>{title}</h1>
+                <h1 className='mt-10 text-xl text-gray-700 font-bold'>Discounted offer: ${price - 5}</h1>
+                <p className='mb-10'><span className='font-bold text-sm text-red-500'>Original offer: <span className='line-through'>${price}</span></span></p>
                 <h2 className='text-xl mb-10 text-gray-600'>{description}</h2>
             </div>
             <Reviews card_id={_id} cat_title={title}></Reviews>
+            <h2 className='mt-5 text-3xl font-3 font-bold text-gray-400 text-center'>Reviews</h2>
             {
                 reviews.slice().reverse().map(review => <ShowReview key={review._id} review={review} card_id={_id}></ShowReview>)
             }

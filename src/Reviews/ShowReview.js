@@ -6,7 +6,7 @@ const ShowReview = ({review, card_id}) => {
         <div>
             {
                 review.cardId === card_id?(<>
-                    <figure class="flex flex-col justify-center items-center p-8 text-center bg-gray-200  border-b border-gray-200 md:rounded md:border-r mb-3">
+                    <figure class="flex flex-col justify-center items-center p-8 text-center bg-gray-200 md:rounded-xl mb-5">
                         <blockquote class="mx-auto mb-4 max-w-2xl text-gray-500 lg:mb-8">
                             <h3 class="font-3 text-lg font-semibold text-gray-500">Section: {review.category_title}</h3>
                             <p class="font-2 my-4 text-xl font-bold">{review.review}</p>
