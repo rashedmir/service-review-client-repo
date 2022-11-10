@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Navbar/Navbar";
 import './Blog.css'
+import useTitle from '../../src/Hooks/useTitle';
 
 const Blog = () => {
+  useTitle('Blog')
   const [questions, setQuestions] = useState([]);
   useEffect(() => {
     fetch("question.json")

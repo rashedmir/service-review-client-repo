@@ -23,7 +23,11 @@ const CategoryDetails = () => {
             <div className='flex justify-center'>
                 <PhotoProvider>
                     <PhotoView src={img}>
-                        <img className='cursor-zoom-in w-1/2 rounded-xl mt-10' src={img} alt="img" />
+                        <img className='cursor-zoom-in w-1/2 rounded-xl mt-10' src={img} onError={({ currentTarget }) => {
+                            currentTarget.onerror = null;
+                            currentTarget.src =
+                                "https://img.freepik.com/free-photo/word-no-with-child-s-hand-dark-wall_1150-26173.jpg?w=2000";
+                        }} alt="img" />
                     </PhotoView>
                 </PhotoProvider>
             </div>
