@@ -6,7 +6,6 @@ import del from '../../src/assests/delete.png'
 const ReviewCard = ({ allReview, user }) => {
     // console.log("kirey bha", allReview);
     const [reviewDisplay, setreviewDisplay] = useState(allReview)
-    console.log("ki hoise", reviewDisplay._id , "jato", allReview._id);
 
     const handleDelete = review => {
         const agree = window.confirm(`Are you sure you want to delete: ${allReview.review}`)
@@ -22,9 +21,6 @@ const ReviewCard = ({ allReview, user }) => {
                 if (data.deletedCount > 0) {
                     alert('Review deleted Successfully');
                     window.location.reload(false);
-                    const remainingUsers = reviewDisplay.filter(usr => usr._id !== allReview._id);
-                    console.log("ami asi", remainingUsers);
-                    setreviewDisplay(remainingUsers);
                 }
             })
         }

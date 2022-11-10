@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import useTitle from '../Hooks/useTitle';
 import './AddServices.css'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast, Flip, Slide, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const AddServices = () => {
@@ -15,7 +17,7 @@ const AddServices = () => {
     fetch('http://localhost:5000/category')
         .then(res => res.json())
         .then(data => setdataLength(data))
-    
+
     const handleAddService = event => {
         event.preventDefault();
         // console.log(user);
@@ -30,9 +32,17 @@ const AddServices = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert('Service added successfully')
-                event.target.reset();
-                navigate(from, { replace: true });
+                setTimeout(() => navigate(from, { replace: true }), 500)
+                toast.success('Service added successfully', {
+                    position: "top-center",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+
             })
     }
 
@@ -62,7 +72,7 @@ const AddServices = () => {
                 </div>
                 <div>
                     <label for="phone" className="block mb-2 text-xl font-medium text-gray-900">Price in $</label>
-                    <input onBlur={handleInputBlur} type="text" name="price" id="phone" className="field_input2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                    <input onBlur={handleInputBlur} type="number" name="price" id="phone" className="field_input2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                     focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123.00" required />
                 </div>
                 <div>
@@ -73,15 +83,22 @@ const AddServices = () => {
                     <input onBlur={handleInputBlur} type="text" name="description" id="website" className="field_input1 text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
                     focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Write something about the service" required /> */}
                 </div>
-
-
-
-
             </div>
 
             <div className='text-center'>
                 <button type="submit" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-4 px-24 border border-gray-400 rounded shadow 
-                    transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-100 my-6">Submit</button>
+                    transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-100 my-6">Submit</button><ToastContainer
+                    theme="dark"
+                    position="top-center"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss={false}
+                    draggable
+                    pauseOnHover
+                />
             </div>
 
         </form>
