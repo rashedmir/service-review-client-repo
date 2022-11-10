@@ -17,6 +17,7 @@ const MyReviews = () => {
 
     return (
         <div>
+            <h1 className='text-center my-5 font-2 text-xl font-bold text-gray-600'>All reviews of: <span className='text-gray-400 text-2xl'>{user.displayName}</span></h1>
             {
                 allReviews.slice().reverse().map(allReview => <ReviewCard key={allReview._id} allReview={allReview} user={user}></ReviewCard>)
             }

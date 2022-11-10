@@ -11,6 +11,7 @@ import TermsAndConditions from '../../Others/TermsAndConditions/TermsAndConditio
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import AddServices from '../../AddServices/AddServices';
 import MyReviews from '../../MyReviews/MyReviews';
+import EditReview from '../../EditReview/EditReview';
 
 export const routes = createBrowserRouter([
     {
@@ -48,6 +49,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/main/private/myReview',
                 element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
+            },
+            {
+                path:'/main/private/update/:id',
+                element: <PrivateRoute><EditReview></EditReview></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
             }
         ]
     },

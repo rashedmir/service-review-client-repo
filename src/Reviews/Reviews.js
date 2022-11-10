@@ -22,6 +22,7 @@ const Reviews = ({ card_id, cat_title }) => {
                 console.log(data)
                 alert('Review added successfully')
                 event.target.reset();
+                window.location.reload(false);
             })
     }
 
