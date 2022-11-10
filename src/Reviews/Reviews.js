@@ -8,12 +8,12 @@ const Reviews = ({ card_id, cat_title }) => {
     const { user } = useContext(AuthContext);
 
     const [review, setReviews] = useState({});
-    
+
 
     const handleAddReview = event => {
         event.preventDefault();
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://b6a11-service-review-server-side-rashedmir.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -12,11 +12,11 @@ const CategoryDetails = () => {
     const { _id, img, description, title, price } = catDetails
     const [reviews, setReviews] = useState([]);
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/review')
-        .then(res => res.json())
-        .then(data => setReviews(data));
-    },[])    
+    useEffect(() => {
+        fetch('https://b6a11-service-review-server-side-rashedmir.vercel.app/review')
+            .then(res => res.json())
+            .then(data => setReviews(data));
+    }, [])
 
     return (
         <div className='mx-28 font-2'>

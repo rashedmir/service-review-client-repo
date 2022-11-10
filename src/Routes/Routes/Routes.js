@@ -16,32 +16,32 @@ import Blog from '../../Blog/Blog';
 
 export const routes = createBrowserRouter([
     {
-        path:'/',
+        path: '/',
         element: <Landing></Landing>
     },
     {
-        path:'/main',
+        path: '/main',
         element: <Main></Main>,
-        children:[
+        children: [
             {
-                path:'/main/photography',
+                path: '/main/photography',
                 element: <Photography></Photography>,
-                loader: () => fetch('http://localhost:5000/category')
+                loader: () => fetch('https://b6a11-service-review-server-side-rashedmir.vercel.app/category')
             },
             {
-                path:'/main/allPhotoCategory',
-                element:<AllPhotoCategory></AllPhotoCategory>,
-                loader: () => fetch('http://localhost:5000/category')
+                path: '/main/allPhotoCategory',
+                element: <AllPhotoCategory></AllPhotoCategory>,
+                loader: () => fetch('https://b6a11-service-review-server-side-rashedmir.vercel.app/category')
             },
             {
                 path: '/main/category/:id',
                 element: <CategoryDetails></CategoryDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://b6a11-service-review-server-side-rashedmir.vercel.app/category/${params.id}`)
             },
             {
                 path: '/main/private/:id',
                 element: <PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://b6a11-service-review-server-side-rashedmir.vercel.app/category/${params.id}`)
             },
             {
                 path: '/main/private/addServices',
@@ -52,18 +52,18 @@ export const routes = createBrowserRouter([
                 element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
             },
             {
-                path:'/main/private/update/:id',
+                path: '/main/private/update/:id',
                 element: <PrivateRoute><EditReview></EditReview></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
+                loader: ({ params }) => fetch(`https://b6a11-service-review-server-side-rashedmir.vercel.app/review/${params.id}`)
             }
         ]
     },
     {
-        path:'/login',
+        path: '/login',
         element: <Login></Login>
     },
     {
-        path:'/register',
+        path: '/register',
         element: <Register></Register>
     },
     {
@@ -71,7 +71,7 @@ export const routes = createBrowserRouter([
         element: <TermsAndConditions></TermsAndConditions>
     },
     {
-        path:'/blog',
+        path: '/blog',
         element: <Blog></Blog>
     }
 ])

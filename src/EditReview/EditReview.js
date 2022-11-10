@@ -17,7 +17,7 @@ const EditReview = () => {
     const handleUpdateReview = event => {
         event.preventDefault();
         // console.log(user);
-        fetch(`http://localhost:5000/review/${storedReview._id}`, {
+        fetch(`https://b6a11-service-review-server-side-rashedmir.vercel.app/review/${storedReview._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -13,7 +13,7 @@ const ReviewCard = ({ allReview, user }) => {
         console.log(agree);
         if (agree) {
             console.log("Deleting review with id:", allReview._id);
-            fetch(`http://localhost:5000/review/${allReview._id}`, {
+            fetch(`https://b6a11-service-review-server-side-rashedmir.vercel.app/review/${allReview._id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

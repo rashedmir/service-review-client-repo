@@ -14,7 +14,7 @@ const AddServices = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/main/allPhotoCategory';
-    fetch('http://localhost:5000/category')
+    fetch('https://b6a11-service-review-server-side-rashedmir.vercel.app/category')
         .then(res => res.json())
         .then(data => setdataLength(data))
 
@@ -23,7 +23,7 @@ const AddServices = () => {
         // console.log(user);
 
 
-        fetch('http://localhost:5000/category', {
+        fetch('https://b6a11-service-review-server-side-rashedmir.vercel.app/category', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
