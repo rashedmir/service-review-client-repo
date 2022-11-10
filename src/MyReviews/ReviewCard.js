@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import edit from '../../src/assests/edit.png'
 import del from '../../src/assests/delete.png'
+import { ToastContainer, toast, Flip, Slide, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ReviewCard = ({ allReview, user }) => {
-    // console.log("kirey bha", allReview);
     const [reviewDisplay, setreviewDisplay] = useState(allReview)
 
     const handleDelete = review => {
@@ -15,14 +16,22 @@ const ReviewCard = ({ allReview, user }) => {
             fetch(`http://localhost:5000/review/${allReview._id}`, {
                 method: 'DELETE',
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.deletedCount > 0) {
-                    alert('Review deleted Successfully');
-                    window.location.reload(false);
-                }
-            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        setTimeout(() => window.location.reload(false), 2000)
+                        toast.success('Review deleted Successfully', {
+                            position: "top-center",
+                            autoClose: 1000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                        });
+                    }
+                })
         }
     }
 
@@ -47,6 +56,18 @@ const ReviewCard = ({ allReview, user }) => {
                         <div className='float-right border-2'>
                             <button className='' type="submit"><Link to={`/main/private/update/${allReview._id}`}><img className='w-7 mr-5' src={edit} alt="edit-img" /></Link></button>
                             <button onClick={() => handleDelete(allReview.review)} type="submit"><Link><img className='w-8' src={del} alt="edit-img" /></Link></button>
+                            <ToastContainer
+                                theme="dark"
+                                position="top-center"
+                                autoClose={3000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss={false}
+                                draggable
+                                pauseOnHover
+                            />
                         </div>
                     </figure>
                 )

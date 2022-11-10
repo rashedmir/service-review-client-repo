@@ -4,6 +4,8 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import Footer from '../../Footer/Footer';
 import useTitle from '../../Hooks/useTitle';
+import './Login.css';
+import mrpLogo from '../../assests/mrp_logo_b.png'
 
 const Login = () => {
     useTitle('Login');
@@ -25,10 +27,28 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
-                form.reset();
-                setError('');
-                navigate(from, { replace: true });
+                // console.log(user);
+
+                const currentUser = {
+                    email: user.email
+                }
+                console.log(currentUser);
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('serviceReview', data.token);
+                        form.reset();
+                        setError('');
+                        navigate(from, { replace: true });
+                    })
+
             })
             .catch(error => {
                 console.error(error)
@@ -56,18 +76,18 @@ const Login = () => {
     }
 
     return (
-        <div className='bg-gray-200 h-screen'>
+        <div className='bground bg-no-repeat bg-cover bg-gray-200 h-screen'>
             <div className='flex flex-col items-center md:mb-48 mb-24'>
                 {/* <Header></Header> */}
                 <div className=''>
                     <Link to='/'>
                         <div className='flex items-center my-10'>
-                            {/* <img className='w-28 mr-5 rounded-lg' src={logo} alt='img' /> */}
+                            <img className='w-28 -mr-9 -mt-9 rounded-lg rotate-12' src={mrpLogo} alt='img' />
                             <h1 className='text-5xl font-bold text-gray-600'>Mir Rashed Photography</h1>
                         </div>
                     </Link>
                 </div>
-                <div className='flex flex-col items-center md:w-1/3 bg-white rounded-lg mx-16 text-gray-800 p-5 text-center'>
+                <div className='flex flex-col items-center md:w-1/3 bg-white rounded-lg mx-16 text-gray-800 p-5 text-center border-2'>
                     <div>
                         <h1 className='font-bold text-3xl mb-2'>Login to your account</h1>
                     </div>

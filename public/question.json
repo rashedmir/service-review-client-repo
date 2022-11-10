@@ -1,0 +1,22 @@
+[
+  {
+    "index": 1,
+    "ques": "Difference between SQL and NoSQL",
+    "ans": "SQL databases are relational, NoSQL databases are non-relational. <br /> SQL databases use structured query language and have a predefined schema. <br /> NoSQL databases have dynamic schemas for unstructured data. SQL databases are vertically scalable, while NoSQL databases are horizontally scalable.<br /> SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores.SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON."
+  },
+  {
+    "index": 2,
+    "ques": "What is JWT, and how does it work?",
+    "ans": " JSON Web Token (JWT) is an open standard for securely transmitting information between parties as JSON object. It is compact, readable and digitally signed using a private key/ or a public key pair by the Identity Provider."
+  },
+  {
+    "index": 3,
+    "ques": "What is the difference between javascript and NodeJS?",
+    "ans": "JavaScript is a simple programming language that can be used with any browser that has the JavaScript Engine installed. Node. js, on the other hand, is an interpreter or execution environment for the JavaScript programming language."
+  },
+  {
+    "index": 4,
+    "ques": "How does NodeJS handle multiple requests at the same time?",
+    "ans": "NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them."
+  }
+]

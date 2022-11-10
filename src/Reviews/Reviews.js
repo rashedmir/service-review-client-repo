@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
-
+import { ToastContainer, toast, Flip, Slide, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Reviews = ({ card_id, cat_title }) => {
     const { user } = useContext(AuthContext);
 
     const [review, setReviews] = useState({});
+    
+
     const handleAddReview = event => {
         event.preventDefault();
 
@@ -19,10 +22,16 @@ const Reviews = ({ card_id, cat_title }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                alert('Review added successfully')
-                event.target.reset();
-                window.location.reload(false);
+                setTimeout(() => window.location.reload(false), 2000)
+                toast.success('Review added Successfully', {
+                    position: "top-center",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
             })
     }
 
@@ -64,7 +73,18 @@ const Reviews = ({ card_id, cat_title }) => {
                     transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-100" to={`/main/private/${card_id}`}>Login to Comment</Link></button>
                         </>
                 }
-            </div>
+            </div><ToastContainer
+                theme="dark"
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover
+            />
 
 
         </div>

@@ -1,0 +1,13 @@
+.background-blog{
+    /* background-image: linear-gradient(to right, rgba(38, 142, 255, 0.8), rgba(91, 117, 255, 0.7)), url(https://jthemes.net/themes/html/quizo/version-4/assets/images/bg_0.png); */
+    background-image:url(https://img.freepik.com/premium-photo/question-mark-white-wall-background-faq-concept-image_488220-27079.jpg?w=1380);
+    /* background-image:url(https://jthemes.net/themes/html/quizo/version-15/assets/images/background/bg.png); */
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #252c4a;
+    background-size: cover;
+    overflow: hidden;
+}

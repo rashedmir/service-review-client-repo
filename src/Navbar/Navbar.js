@@ -30,7 +30,7 @@ const Navbar = () => {
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
                         <li>
-                            <a href="/" className="font-3 text-xl block py-2 pr-4 pl-3 text-white rounded md:text-gray-700 md:p-0" aria-current="page">Home</a>
+                            <a href="/" className="font-3 text-xl block py-2 pr-4 pl-3 text-white rounded md:text-gray-400 md:hover:text-gray-700 md:p-0" aria-current="page">Home</a>
                         </li>
                         <li>
                             <a href="/main/photography" className="font-3 text-xl block py-2 pr-4 pl-3 text-gray-400 rounded md:hover:text-gray-700 md:p-0 ">Photography</a>
@@ -54,8 +54,16 @@ const Navbar = () => {
                                 <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                                     <span className="sr-only">Open user menu</span>
                                     {user?.photoURL ?
-                                        <Tippy content={user?.displayName}><img className="w-12 h-12 rounded-full" src={user?.photoURL} alt="img" /></Tippy>
-                                        : <Tippy content="No user logged in"><img className="w-14 h-14 rounded-full" src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" alt="img" /></Tippy>
+                                        <Tippy content={user?.displayName}><img className="w-12 h-12 rounded-full" src={user?.photoURL} onError={({ currentTarget }) => {
+                                            currentTarget.onerror = null;
+                                            currentTarget.src =
+                                                "https://w7.pngwing.com/pngs/613/636/png-transparent-computer-icons-user-profile-male-avatar-avatar-heroes-logo-black-thumbnail.png";
+                                        }} alt="img" /></Tippy>
+                                        : <Tippy content="No user logged in"><img className="w-14 h-14 rounded-full" src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" onError={({ currentTarget }) => {
+                                            currentTarget.onerror = null;
+                                            currentTarget.src =
+                                                "https://w7.pngwing.com/pngs/613/636/png-transparent-computer-icons-user-profile-male-avatar-avatar-heroes-logo-black-thumbnail.png";
+                                        }} alt="img" /></Tippy>
                                     }
                                 </button>
                                 <span className='ml-5 font-3 text-xl font-bold text-gray-500'>{user?.displayName}</span>
@@ -70,7 +78,6 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
-
     );
 };
 

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../Hooks/useTitle';
+import { ToastContainer, toast, Flip, Slide, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const EditReview = () => {
     useTitle("Edit Review")
@@ -26,8 +28,18 @@ const EditReview = () => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     // console.log(data);
-                    alert("Updated successfully")
-                    navigate(from, { replace: true });
+                    // alert("Updated successfully")
+                    setTimeout(() => navigate(from, { replace: true }), 2000)
+                    toast.success('Review updated Successfully', {
+                        position: "top-center",
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
+
                 }
             })
 
@@ -54,6 +66,18 @@ const EditReview = () => {
                     <div className="text-center bg-gray-200">
                         <button type="submit" className="font-2 bg-white hover:bg-gray-500 hover:text-white text-gray-800 font-semibold  px-5 py-5 border border-gray-400 rounded shadow 
                     transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-100 my-10 mr-2">Update review</button>
+                        <ToastContainer
+                            theme="dark"
+                            position="top-center"
+                            autoClose={3000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss={false}
+                            draggable
+                            pauseOnHover
+                        />
                     </div>
                 </div>
             </form>

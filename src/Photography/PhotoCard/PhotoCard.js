@@ -13,7 +13,11 @@ const PhotoCard = ({ category }) => {
                         <div className='w-1/2'>
                             <PhotoProvider>
                                 <PhotoView src={img}>
-                                    <img src={img} alt='img' className="cursor-zoom-in w-4/5 h-full rounded-lg shadow-2xl hover:-rotate-6 transition-transform rotate-6 " />
+                                    <img src={img} onError={({ currentTarget }) => {
+                                        currentTarget.onerror = null;
+                                        currentTarget.src =
+                                            "https://img.freepik.com/free-photo/word-no-with-child-s-hand-dark-wall_1150-26173.jpg?w=2000";
+                                    }} alt='img' className="cursor-zoom-in w-4/5 h-full rounded-lg shadow-2xl hover:-rotate-6 transition-transform rotate-6 " />
                                 </PhotoView>
                             </PhotoProvider>
 
@@ -40,7 +44,11 @@ const PhotoCard = ({ category }) => {
                             <div className='w-1/2'>
                                 <PhotoProvider>
                                     <PhotoView src={img}>
-                                        <img src={img} alt='img' className="cursor-zoom-in w-4/5 h-full rounded-lg shadow-2xl hover:rotate-6 transition-transform -rotate-6" />
+                                        <img src={img} onError={({ currentTarget }) => {
+                                            currentTarget.onerror = null;
+                                            currentTarget.src =
+                                                "https://img.freepik.com/free-photo/word-no-with-child-s-hand-dark-wall_1150-26173.jpg?w=2000";
+                                        }} alt='img' className="cursor-zoom-in w-4/5 h-full rounded-lg shadow-2xl hover:rotate-6 transition-transform -rotate-6" />
                                     </PhotoView>
                                 </PhotoProvider>
                             </div>

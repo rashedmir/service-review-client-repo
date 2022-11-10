@@ -1,11 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { ToastContainer, toast, Flip, Slide, Zoom } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Footer from '../../Footer/Footer';
 import useTitle from '../../Hooks/useTitle';
-
+import './Register.css'
+import mrpLogo from '../../../src/assests/mrp_logo_b.png'
 
 const Register = () => {
     useTitle('Register');
@@ -18,17 +17,6 @@ const Register = () => {
 
     const from = location.state?.from?.pathname || '/';
 
-    const notifyEnrolled = () =>
-        toast.success('Signed up Successfully. You can log in now', {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
-
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -36,7 +24,7 @@ const Register = () => {
         const photoURL = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        
+
 
         createUser(email, password)
             .then(result => {
@@ -70,18 +58,18 @@ const Register = () => {
 
 
     return (
-        <div className='bg-gray-200 h-screen'>
+        <div className='bg-gray-200 h-screen backrnd bg-no-repeat bg-cover'>
             <div className='flex flex-col items-center'>
                 {/* <Header></Header> */}
                 <div className=''>
                     <Link to='/'>
-                        <div className='flex items-center my-10'>
-                            {/* <img className='w-28 mr-5 rounded-lg' src={logo} alt='img' /> */}
+                        <div className='flex items-center mb-5 mt-14'>
+                            <img className='w-28 -mr-9 -mt-9 rounded-lg rotate-12' src={mrpLogo} alt='img' />
                             <h1 className='text-5xl font-bold text-gray-600'>Mir Rashed Photography</h1>
                         </div>
                     </Link>
                 </div>
-                <div className='flex flex-col items-center md:w-1/3 bg-white rounded-lg mx-16 text-gray-800 p-5 mb-16'>
+                <div className='flex flex-col items-center md:w-1/3 bg-white rounded-lg mx-16 text-gray-800 p-5 mb-16 border-2'>
                     <div>
                         <h1 className='font-bold text-3xl mb-2'>Register account</h1>
                     </div>
@@ -120,18 +108,6 @@ const Register = () => {
                         </div>
                         <button type="submit" disabled={!accepted} className="disabled:bg-gray-400 text-white bg-blue-700 focus:ring-4 focus:outline-none 
                         focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Sign up</button>
-                        <ToastContainer
-                            theme="dark"
-                            position="top-center"
-                            autoClose={3000}
-                            hideProgressBar={false}
-                            newestOnTop={false}
-                            closeOnClick
-                            rtl={false}
-                            pauseOnFocusLoss={false}
-                            draggable
-                            pauseOnHover
-                        />
                         <div>{error}</div>
                     </form>
                 </div>

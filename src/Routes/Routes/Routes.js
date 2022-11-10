@@ -12,6 +12,7 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import AddServices from '../../AddServices/AddServices';
 import MyReviews from '../../MyReviews/MyReviews';
 import EditReview from '../../EditReview/EditReview';
+import Blog from '../../Blog/Blog';
 
 export const routes = createBrowserRouter([
     {
@@ -68,6 +69,10 @@ export const routes = createBrowserRouter([
     {
         path: '/terms',
         element: <TermsAndConditions></TermsAndConditions>
+    },
+    {
+        path:'/blog',
+        element: <Blog></Blog>
     }
 ])
 
